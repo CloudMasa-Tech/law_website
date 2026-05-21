@@ -88,7 +88,7 @@ export default function Footer() {
                 rel="noreferrer"
                 className="font-semibold text-gray-300 underline decoration-white/20 underline-offset-4 transition-colors hover:text-white"
               >
-                CloudMaSa Innovation
+                CloudMaSa Innovation Lab
               </a>
               .
             </div>
