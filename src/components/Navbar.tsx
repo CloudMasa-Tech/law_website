@@ -1,5 +1,6 @@
-import { Menu, Scale, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import BrandLogo from "./BrandLogo";
 import { navItems } from "../siteContent";
 
 export default function Navbar() {
@@ -26,19 +27,11 @@ export default function Navbar() {
     <header
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
         isScrolled ? "border-b border-gray-100 bg-white/92 shadow-sm shadow-black/5 bg-blur-header" : "border-b border-gray-100 bg-white/90 bg-blur-header"
-      }`}
+        }`}
     >
       <div className="container mx-auto flex h-[68px] items-center justify-between px-4 sm:px-6 lg:h-[76px] lg:px-8">
         <a href="#home" className="flex items-center gap-3" aria-label="Law Arena Associates home">
-          <Scale className="h-5 w-5 text-black" strokeWidth={1.6} />
-          <span className="leading-none">
-            <span className="block font-serif text-[16px] font-bold uppercase tracking-[0.14em] sm:text-[18px] lg:text-[20px] lg:tracking-[0.18em]">
-              Law Arena
-            </span>
-            <span className="mt-1 block text-[8px] font-bold uppercase tracking-[0.42em] text-gray-400 sm:text-[9px] lg:tracking-[0.55em]">
-              Associates
-            </span>
-          </span>
+          <BrandLogo fullLogo />
         </a>
 
         <div className="hidden items-center gap-8 lg:flex">
@@ -56,7 +49,7 @@ export default function Navbar() {
 
           <a
             href="#contact"
-            className="whitespace-nowrap bg-black px-7 py-4 text-[11px] font-bold uppercase tracking-[0.32em] text-white transition-colors hover:bg-gray-800"
+            className="sharp-cta whitespace-nowrap px-7 py-4 text-[11px] font-bold uppercase tracking-[0.32em]"
           >
             Book Consultation
           </a>
@@ -65,7 +58,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3 lg:hidden">
           <a
             href="#contact"
-            className="rounded-full bg-black px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:bg-gray-800"
+            className="sharp-cta px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em]"
           >
             Consult
           </a>

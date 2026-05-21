@@ -1,4 +1,4 @@
-import { Scale } from "lucide-react";
+import BrandLogo from "./BrandLogo";
 import { firm, legalPolicies, navItems, services } from "../siteContent";
 
 export default function Footer() {
@@ -21,11 +21,7 @@ export default function Footer() {
         <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:mb-20 lg:grid-cols-4 lg:gap-16">
           <div>
             <div className="mb-8 flex items-center gap-3">
-              <Scale className="h-5 w-5 text-white" strokeWidth={1.6} />
-              <span className="leading-none">
-                <span className="block font-serif text-xl font-bold uppercase tracking-[0.18em]">Law Arena</span>
-                <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.55em] text-gray-500">Associates</span>
-              </span>
+              <BrandLogo tone="light" compact />
             </div>
             <p className="mb-8 max-w-[260px] text-sm leading-relaxed text-gray-400">
               Multi-disciplinary legal and para-legal services. Strategic counsel grounded in integrity, since {firm.established}.
@@ -48,7 +44,7 @@ export default function Footer() {
           <div>
             <h4 className="mb-8 text-[10px] font-bold uppercase tracking-[0.35em] text-gray-400">Quick Links</h4>
             <ul className="space-y-4">
-              {[...navItems, ...legalPolicies.map((policy) => ({ label: policy.title, href: `#${policy.id}` }))].map((link) => (
+              {[...navItems, ...legalPolicies.map((policy) => ({ label: policy.title, href: "#legal" }))].map((link) => (
                 <li key={link.label}>
                   <a href={link.href} className="text-sm text-gray-400 transition-colors hover:text-white">
                     {link.label}
@@ -82,8 +78,26 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 md:flex-row md:items-center">
-          <div className="text-xs text-gray-500">Copyright 2026 {firm.name}. All rights reserved.</div>
-          <div className="max-w-2xl text-xs text-gray-500">
+          <div className="space-y-2 text-xs text-gray-500">
+            <div>Copyright 2026 {firm.name}. All rights reserved.</div>
+            <div>
+              Built by{" "}
+              <a
+                href="https://cloudmasa.com"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-gray-300 underline decoration-white/20 underline-offset-4 transition-colors hover:text-white"
+              >
+                CloudMaSa Innovation
+              </a>
+              .
+            </div>
+          </div>
+          <div className="max-w-2xl text-xs leading-relaxed text-gray-500 md:text-right">
+            <a href="#legal" className="font-semibold text-gray-300 underline decoration-white/20 underline-offset-4 transition-colors hover:text-white">
+              Privacy Policy
+            </a>
+            <span className="mx-2 text-gray-700">/</span>
             Disclaimer: Contacting us does not constitute creation of a lawyer-client relationship.
           </div>
         </div>

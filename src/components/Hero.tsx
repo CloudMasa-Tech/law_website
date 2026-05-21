@@ -45,7 +45,7 @@ export default function Hero() {
           <div className="mb-14 flex flex-col justify-center gap-3 sm:mb-20 sm:flex-row sm:flex-wrap sm:gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-4 bg-black px-6 py-4 text-[10px] font-bold uppercase tracking-[0.22em] text-white shadow-2xl shadow-black/10 transition-all hover:bg-gray-800 sm:gap-5 sm:px-8 sm:py-5 sm:text-[11px] sm:tracking-[0.32em]"
+              className="sharp-cta inline-flex items-center justify-center gap-4 px-6 py-4 text-[10px] font-bold uppercase tracking-[0.22em] sm:gap-5 sm:px-8 sm:py-5 sm:text-[11px] sm:tracking-[0.32em]"
             >
               Book Consultation
               <ArrowRight className="h-4 w-4" />

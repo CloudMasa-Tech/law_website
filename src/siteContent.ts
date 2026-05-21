@@ -245,15 +245,30 @@ export const legalPolicies = [
     id: "disclaimer",
     title: "Legal Disclaimer",
     body: "The information on this website is for general awareness only and should not be treated as legal advice. A lawyer-client relationship is created only after conflict checks, formal engagement, and written acceptance by the firm.",
+    statements: [
+      "Website content is provided to explain our general areas of work and does not replace advice for a specific matter.",
+      "Any action taken based on website information is at the visitor's own discretion until a formal consultation is completed.",
+    ],
   },
   {
     id: "privacy",
     title: "Privacy Policy",
-    body: "Information submitted through the enquiry form is used only to review and respond to the matter described. We do not sell visitor information. Sensitive facts should be shared only after a formal consultation is confirmed.",
+    body: "Law Arena Associates respects visitor privacy and handles enquiry details with care. Information shared through calls, WhatsApp, email, or contact forms is used only to understand the enquiry, respond to the visitor, schedule consultation, and maintain necessary professional records.",
+    statements: [
+      "We may collect name, contact number, email address, location, and the basic description of the legal or compliance enquiry submitted by the visitor.",
+      "We do not sell, rent, or trade visitor information to third parties for marketing purposes.",
+      "Enquiry information may be shared only with authorised team members, legal associates, consultants, or service providers when required to review or respond to the matter.",
+      "Sensitive documents and detailed case facts should be shared only after a formal consultation or engagement is confirmed.",
+      "Visitors may contact us to request correction or removal of enquiry information, subject to legal, professional, and record-keeping requirements.",
+    ],
   },
   {
     id: "terms",
     title: "Terms of Use",
     body: "Visitors may use this website for lawful information purposes only. Content, branding, and service descriptions belong to Law Arena Associates and may not be copied or republished without written permission.",
+    statements: [
+      "Visitors must not misuse the website, submit false enquiries, or copy the site's content and branding without written approval.",
+      "External links, maps, messaging apps, and third-party services are governed by their own terms and privacy practices.",
+    ],
   },
 ];

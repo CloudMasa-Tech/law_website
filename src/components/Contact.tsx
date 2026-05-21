@@ -175,7 +175,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-black py-5 text-[10px] font-bold uppercase tracking-[0.28em] text-white shadow-2xl shadow-black/10 transition-colors hover:bg-gray-800 sm:text-[11px] sm:tracking-[0.35em]"
+                className="sharp-cta w-full py-5 text-[10px] font-bold uppercase tracking-[0.28em] sm:text-[11px] sm:tracking-[0.35em]"
               >
                 Submit Enquiry
               </button>
