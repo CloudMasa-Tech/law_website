@@ -33,7 +33,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {services.slice(0, 6).map((link) => (
                 <li key={link.title}>
-                  <a href="#services" className="text-sm text-gray-400 transition-colors hover:text-white">
+                  <a href={`/services/${link.slug}`} className="text-sm text-gray-400 transition-colors hover:text-white">
                     {link.title}
                   </a>
                 </li>
@@ -44,7 +44,7 @@ export default function Footer() {
           <div>
             <h4 className="mb-8 text-[10px] font-bold uppercase tracking-[0.35em] text-gray-400">Quick Links</h4>
             <ul className="space-y-4">
-              {[...navItems, ...legalPolicies.map((policy) => ({ label: policy.title, href: "#legal" }))].map((link) => (
+              {[...navItems, ...legalPolicies.map((policy) => ({ label: policy.title, href: policy.id === "privacy" ? "/privacy-policy" : policy.id === "terms" ? "/terms-of-use" : "/disclaimer" }))].map((link) => (
                 <li key={link.label}>
                   <a href={link.href} className="text-sm text-gray-400 transition-colors hover:text-white">
                     {link.label}
@@ -94,7 +94,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="max-w-2xl text-xs leading-relaxed text-gray-500 md:text-right">
-            <a href="#legal" className="font-semibold text-gray-300 underline decoration-white/20 underline-offset-4 transition-colors hover:text-white">
+            <a href="/privacy-policy" className="font-semibold text-gray-300 underline decoration-white/20 underline-offset-4 transition-colors hover:text-white">
               Privacy Policy
             </a>
             <span className="mx-2 text-gray-700">/</span>

@@ -38,13 +38,13 @@ export const firm = {
 };
 
 export const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Compliance", href: "#compliance" },
-  { label: "Process", href: "#process" },
-  { label: "Offices", href: "#offices" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Compliance", href: "/compliance" },
+  { label: "Process", href: "/process" },
+  { label: "Offices", href: "/offices" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const heroStats = [
@@ -56,6 +56,7 @@ export const heroStats = [
 
 export const services = [
   {
+    slug: "court-representation",
     id: "01",
     title: "Court Representation",
     desc: "Skilled representation before district and civil courts across Puducherry and Chennai through every stage of litigation.",
@@ -64,6 +65,7 @@ export const services = [
     items: ["Civil Suits", "Property Disputes", "Family Court Matters", "Appeals"],
   },
   {
+    slug: "civil-litigation",
     id: "02",
     title: "Civil Litigation",
     desc: "Thorough case preparation, evidence management, written submissions, and courtroom advocacy for complex disputes.",
@@ -72,6 +74,7 @@ export const services = [
     items: ["Partition Suits", "Contract Disputes", "Consumer Disputes"],
   },
   {
+    slug: "document-drafting",
     id: "03",
     title: "Document Drafting",
     desc: "Precise drafting for notices, pleadings, commercial agreements, affidavits, and settlement documents.",
@@ -80,6 +83,7 @@ export const services = [
     items: ["Legal Notices", "Agreements", "Affidavits", "Sale Deeds"],
   },
   {
+    slug: "property-real-estate-law",
     id: "04",
     title: "Property & Real Estate",
     desc: "Transaction, title, registration, and dispute support for land and real-estate matters in Tamil Nadu and Puducherry.",
@@ -88,6 +92,7 @@ export const services = [
     items: ["Title Verification", "Registration Assistance", "Land Disputes"],
   },
   {
+    slug: "family-personal-law",
     id: "05",
     title: "Family & Personal Law",
     desc: "Discreet assistance for sensitive family matters with a clear focus on fair, practical resolution.",
@@ -96,6 +101,7 @@ export const services = [
     items: ["Divorce", "Child Custody", "Succession"],
   },
   {
+    slug: "transaction-agreements",
     id: "06",
     title: "Transaction & Agreements",
     desc: "Business contract support that protects commercial interests from due diligence through execution.",
@@ -219,6 +225,7 @@ export const whyChooseUs = [
 
 export const offices = [
   {
+    slug: "puducherry",
     label: "Puducherry",
     city: "Puducherry Office",
     address: "No. 115-117, Chetty Street,\nPuducherry - 605001",
@@ -226,6 +233,7 @@ export const offices = [
     map: "https://maps.google.com/maps?q=Chetty%20Street%20Puducherry%20605001&t=m&z=15&output=embed",
   },
   {
+    slug: "chennai",
     label: "Chennai",
     city: "Chennai Office",
     address: "No. 8/29, Loganathan Street,\nWest Tambaram, Chennai - 600045",

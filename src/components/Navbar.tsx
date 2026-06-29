@@ -30,7 +30,7 @@ export default function Navbar() {
         }`}
     >
       <div className="container mx-auto flex h-[68px] items-center justify-between px-4 sm:px-6 lg:h-[76px] lg:px-8">
-        <a href="#home" className="flex items-center gap-3" aria-label="Law Arena Associates home">
+        <a href="/" className="flex items-center gap-3" aria-label="Law Arena Associates home">
           <BrandLogo fullLogo />
         </a>
 
@@ -48,7 +48,7 @@ export default function Navbar() {
           </nav>
 
           <a
-            href="#contact"
+            href="/contact"
             className="sharp-cta whitespace-nowrap px-7 py-4 text-[11px] font-bold uppercase tracking-[0.32em]"
           >
             Book Consultation
@@ -57,7 +57,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3 lg:hidden">
           <a
-            href="#contact"
+            href="/contact"
             className="sharp-cta px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em]"
           >
             Consult

@@ -163,3 +163,13 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+.route-page > section:first-child {
+  padding-top: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .route-page > section:first-child {
+    padding-top: 2.5rem;
+  }
+}

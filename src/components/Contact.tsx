@@ -29,12 +29,10 @@ export default function Contact() {
       return;
     }
 
-    const subject = encodeURIComponent(`Website enquiry - ${form.matter}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nMatter Type: ${form.matter}\n\nMessage:\n${form.message}`,
-    );
-    window.location.href = `mailto:${firm.email}?subject=${subject}&body=${body}`;
-    setStatus("Your email client has been opened with the enquiry details.");
+    const enquiry = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nMatter Type: ${form.matter}\n\nMessage:\n${form.message}`;
+    const body = encodeURIComponent(enquiry);
+    window.location.href = `${firm.whatsappUrl}?text=${body}`;
+    setStatus("Redirecting to WhatsApp with your enquiry details.");
   };
 
   const updateField = (field: keyof typeof initialForm) => (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

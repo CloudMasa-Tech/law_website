@@ -4,6 +4,12 @@ import { legalPolicies } from "../siteContent";
 
 const icons = [ShieldCheck, LockKeyhole, FileText];
 
+function policyHref(id: string) {
+  if (id === "privacy") return "/privacy-policy";
+  if (id === "terms") return "/terms-of-use";
+  return "/disclaimer";
+}
+
 export default function LegalPages() {
   return (
     <section id="legal" className="border-t border-gray-100 bg-[#f7f7f7] py-20 sm:py-24 lg:py-28">
@@ -35,7 +41,20 @@ export default function LegalPages() {
                   <Icon className="h-5 w-5 text-black" strokeWidth={1.5} />
                 </div>
                 <h3 className="mb-5 font-serif text-2xl font-bold text-black">{policy.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-600">{policy.body}</p>
+                <p className="mb-5 text-sm leading-relaxed text-gray-600">{policy.body}</p>
+                <ul className="space-y-3">
+                  {policy.statements.map((statement) => (
+                    <li key={statement} className="text-sm leading-relaxed text-gray-500">
+                      {statement}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={policyHref(policy.id)}
+                  className="mt-6 inline-flex text-[10px] font-bold uppercase tracking-[0.28em] text-gray-500 hover:text-black"
+                >
+                  Read Full Policy
+                </a>
               </motion.article>
             );
           })}
