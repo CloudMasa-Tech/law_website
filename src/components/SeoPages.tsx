@@ -9,7 +9,7 @@ import Process from "./Process";
 import SeoHead, { siteUrl } from "./SeoHead";
 import Services from "./Services";
 import WhyChooseUs from "./WhyChooseUs";
-import { firm, legalPolicies, services } from "../siteContent";
+import { firm, legalPolicies, offices, services } from "../siteContent";
 
 type RoutePageProps = {
   path: string;
@@ -142,7 +142,44 @@ function ProcessRoute() {
   );
 }
 
-function OfficesRoute() {
+function OfficesRoute({ slug }: { slug?: string }) {
+  const selected = slug ? offices.find((office) => office.slug === slug) : null;
+
+  if (slug && !selected) return <NotFound />;
+
+  if (selected) {
+    return (
+      <>
+        <SeoHead title={`${selected.label} Legal Office`} description={selected.summary} path={`/locations/${selected.slug}`} />
+        <main className="min-h-screen bg-white pt-28 sm:pt-32">
+          <section className="section-grid border-b border-gray-100 py-16 sm:py-20 lg:py-24">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="sleek-label mb-6">Office Location</div>
+              <h1 className="max-w-5xl font-serif text-[42px] font-bold leading-[0.95] tracking-normal text-black sm:text-6xl lg:text-[80px]">{selected.city}</h1>
+            </div>
+          </section>
+          <section className="py-16 sm:py-20">
+            <div className="container mx-auto grid gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_420px] lg:px-8">
+              <iframe title={`${selected.city} map`} src={selected.map} className="h-[380px] w-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+              <aside className="border border-gray-200 bg-[#f7f7f7] p-8">
+                <h2 className="mb-4 font-serif text-3xl font-bold">{selected.label}</h2>
+                <p className="mb-6 whitespace-pre-line text-sm leading-relaxed text-gray-600">{selected.address}</p>
+                <p className="mb-8 text-sm leading-relaxed text-gray-600">{selected.summary}</p>
+                <h3 className="mb-3 text-[10px] font-bold uppercase tracking-[0.28em] text-gray-500">Office Focus</h3>
+                <ul className="mb-8 space-y-3 text-sm text-gray-600">
+                  {selected.focus.map((item) => <li key={item}>- {item}</li>)}
+                </ul>
+                <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selected.address.replace(/\n/g, ", "))}`} target="_blank" rel="noreferrer" className="mb-5 inline-flex text-[10px] font-bold uppercase tracking-[0.28em] text-gray-600 underline underline-offset-4 hover:text-black">Open Map</a>
+                <br />
+                <a href="/contact" className="sharp-cta inline-flex px-7 py-4 text-[10px] font-bold uppercase tracking-[0.28em]">Book Consultation</a>
+              </aside>
+            </div>
+          </section>
+        </main>
+      </>
+    );
+  }
+
   return (
     <>
       <SeoHead title="Puducherry and Chennai Offices" description="Law Arena Associates office locations in Puducherry and Chennai for legal, compliance, and advisory matters." path="/offices" />
@@ -152,7 +189,6 @@ function OfficesRoute() {
     </>
   );
 }
-
 function ContactRoute() {
   return (
     <>
@@ -281,6 +317,6 @@ export default function RoutePage({ path }: RoutePageProps) {
   if (path === "/privacy-policy") return <PolicyPage id="privacy" />;
   if (path === "/terms-of-use") return <PolicyPage id="terms" />;
   if (path === "/ai-overview") return <AiOverviewPage />;
-  if (path.startsWith("/locations/")) return <OfficesRoute />;
+  if (path.startsWith("/locations/")) return <OfficesRoute slug={path.split("/")[2]} />;
   return <NotFound />;
 }

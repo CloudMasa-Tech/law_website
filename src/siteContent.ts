@@ -231,6 +231,8 @@ export const offices = [
     address: "No. 115-117, Chetty Street,\nPuducherry - 605001",
     tags: ["HQ", "Civil Litigation", "Property Law"],
     map: "https://maps.google.com/maps?q=Chetty%20Street%20Puducherry%20605001&t=m&z=15&output=embed",
+    summary: "The Puducherry office supports civil litigation, property, documentation, family, and compliance matters for clients in and around Puducherry.",
+    focus: ["Civil litigation", "Property title and registration", "Document drafting", "Family and succession matters"],
   },
   {
     slug: "chennai",
@@ -239,6 +241,8 @@ export const offices = [
     address: "No. 8/29, Loganathan Street,\nWest Tambaram, Chennai - 600045",
     tags: ["Corporate", "Compliance", "Family Law"],
     map: "https://maps.google.com/maps?q=Loganathan%20Street%20West%20Tambaram%20Chennai%20600045&t=m&z=14&output=embed",
+    summary: "The Chennai office supports corporate, compliance, property, family, and advisory matters for clients in Chennai and Tamil Nadu.",
+    focus: ["Corporate and compliance advisory", "Property and real-estate support", "Family law", "Business agreements"],
   },
 ];
 

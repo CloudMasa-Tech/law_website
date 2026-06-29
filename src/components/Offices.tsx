@@ -1,6 +1,10 @@
 import { motion } from "motion/react";
-import { Clock, MapPin } from "lucide-react";
+import { Clock, ExternalLink, MapPin } from "lucide-react";
 import { offices } from "../siteContent";
+
+function mapSearchUrl(address: string) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address.replace(/\n/g, ", "))}`;
+}
 
 export default function Offices() {
   return (
@@ -43,9 +47,21 @@ export default function Offices() {
                     <p className="whitespace-pre-line text-sm leading-relaxed text-gray-600">{office.address}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 pb-5 pt-7">
-                  <Clock className="h-4 w-4 shrink-0 text-gray-500" />
-                  <p className="text-sm text-gray-600">Mon - Sat : 09:30 - 18:30</p>
+                <div className="flex flex-col gap-5 pb-5 pt-7 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex items-center gap-4">
+                    <Clock className="h-4 w-4 shrink-0 text-gray-500" />
+                    <p className="text-sm text-gray-600">Mon - Sat : 09:30 - 18:30</p>
+                  </div>
+                  <a
+                    href={mapSearchUrl(office.address)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.28em] text-gray-600 transition-colors hover:text-black"
+                    aria-label={`Open ${office.city} in Google Maps`}
+                  >
+                    Open Map
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {office.tags.map((tag) => (
